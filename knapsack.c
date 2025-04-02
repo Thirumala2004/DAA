@@ -36,22 +36,22 @@ int main()
      printf("Knapsack problems using Greedy Algorithm:\n");
      for (i = 0; i < n; i++)
      {
-      if (weight[i] > capacity)
-          break;
-       else
-      {
-          rv[i]=1.0;
-          Totalvalue = Totalvalue + profit[i];
-          capacity = capacity - weight[i];
-       }
+        if (weight[i] > capacity)
+           break;
+        else
+        {
+           rv[i]=1.0;
+           Totalvalue = Totalvalue + profit[i];
+           capacity = capacity - weight[i];
+        }
      }
-       if (i < n){
-            rv[i]=capacity/weight[i];
-       Totalvalue = Totalvalue + (ratio[i]*capacity);
-     printf("\nThe maximum value is :%f\n",Totalvalue);
-     printf("the result vector:");
-     for(i=0;i<n;i++)
-        printf("%.2f\t",rv[i]);
-     return 0;
-       }
+     if (i < n){
+        rv[i]=capacity/weight[i];
+        Totalvalue = Totalvalue + (ratio[i]*capacity);
+        printf("\nThe maximum value is :%f\n",Totalvalue);
+        printf("the result vector:");
+        for(i=0;i<n;i++)
+           printf("%.2f\t",rv[i]);
+        return 0;
+    }
 }
