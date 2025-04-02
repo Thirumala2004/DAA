@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 int board[20],count;
 int main()
 {
  int n,i,j;
  void queen(int row,int n);
- printf("\n\nEnter number of Queens:");
+ printf("Enter number of Queens:");
  scanf("%d",&n);
  queen(1,n);
  return 0;
@@ -13,9 +14,11 @@ int main()
 void print(int n)
 {
  int i,j;
- printf("Solution %d:\n\n",++count);
+ printf("\n\nSolution %d:\n\n",++count);
+
  for(i=1;i<=n;++i)
   printf("\t%d",i);
+
  for(i=1;i<=n;++i)
  {
   printf("\n\n%d",i);
@@ -39,7 +42,7 @@ int place(int row,int column)
    if(abs(board[i]-column)==abs(i-row))
     return 0;
  }
- return 1;
+ return 1; //no conflicts
 }
 void queen(int row,int n)
 {
@@ -48,10 +51,10 @@ void queen(int row,int n)
  {
   if(place(row,column))
   {
-   board[row]=column; 
+   board[row]=column;
    if(row==n) 
-    print(n);  
-   else 
+    print(n); 
+   else
     queen(row+1,n);
   }
  }
