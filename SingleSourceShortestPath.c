@@ -13,8 +13,6 @@ void printDistances(int dist[], int n) {
             printf("%d\t\t%d\n", i + 1, dist[i]);
     }
 }
-
-
 void bellmanFord(struct Edge edges[], int V, int E, int source) {
     int dist[V];
     for (int i = 0; i < V; i++)
@@ -38,21 +36,15 @@ void bellmanFord(struct Edge edges[], int V, int E, int source) {
             return;
         }
     }
-
     printDistances(dist, V);
 }
-
 int main() {
     int V, E, source;
-
     printf("Enter the number of vertices: ");
     scanf("%d", &V);
-
     printf("Enter the number of edges: ");
     scanf("%d", &E);
-
     struct Edge edges[E];
-
     printf("Enter the edges in the format: source destination weight\n");
     for (int i = 0; i < E; i++) {
         int src, dest, weight;
@@ -62,13 +54,10 @@ int main() {
         edges[i].dest = dest - 1;
         edges[i].weight = weight;
     }
-
     printf("Enter the source vertex: ");
     scanf("%d", &source);
     source--;
-
     bellmanFord(edges, V, E, source);
-
     return 0;
 }
 
