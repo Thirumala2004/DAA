@@ -27,15 +27,6 @@ void bellmanFord(struct Edge edges[], int V, int E, int source) {
                 dist[v] = dist[u] + weight;
         }
     }
-    for (int j = 0; j < E; j++) {
-        int u = edges[j].src;
-        int v = edges[j].dest;
-        int weight = edges[j].weight;
-        if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) {
-            printf("Graph contains negative weight cycle\n");
-            return;
-        }
-    }
     printDistances(dist, V);
 }
 int main() {
