@@ -1,13 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-int board[20],count;
+int board[100],count;
 int main()
 {
     int n,i,j;
-    void queen(int row,int n);
-    printf(" - N Queens Problem Using Backtracking -");
-    printf("\n\nEnter number of Queens:");
+    printf("Enter number of Queens:");
     scanf("%d",&n);
     queen(1,n);
     return 0;
